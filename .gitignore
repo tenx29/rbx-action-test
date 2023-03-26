@@ -4,7 +4,3 @@
 # Roblox Studio lock files
 /*.rbxlx.lock
 /*.rbxl.lock
-
-# Build files
-/*.rbxlx
-/*.rbxl

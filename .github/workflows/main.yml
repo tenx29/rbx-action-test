@@ -5,21 +5,6 @@ jobs:
   Release-to-Roblox:
     runs-on: ubuntu-latest
     steps:
-    - name: Install Rust
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-
-    - name: Install Rojo
-      uses: actions-rs/cargo@v1
-      with:
-        command: install
-        args: rojo --version ^7
-
-    - name: Build project
-      shell: bash
-      run: rojo build -o build.rbxl
-
     - name: Upload to Roblox
       uses: tenx29/save-to-roblox@v1-prerelease
       with:
