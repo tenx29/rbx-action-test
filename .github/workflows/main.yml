@@ -1,0 +1,19 @@
+name: 'Continuous Delivery'
+on: [push]
+
+jobs:
+  Release-to-Roblox:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Rojo Build
+      uses: SkyLightRBX/RojoBuildAction@v0.1
+      with:
+        output: 'build.rbxl'
+    - name: Upload to Roblox
+      uses: tenx29/save-to-roblox@v1-prerelease
+      with:
+        api-key: ${{ secrets.ROBLOX_API_KEY }}
+        universe-id: 4517238963
+        place-id: 12909373856
+        place-file: build.rbxl
+        version-type: Published
