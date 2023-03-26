@@ -5,8 +5,8 @@ jobs:
   Release-to-Roblox:
     runs-on: ubuntu-latest
     steps:
-    - name: List files
-      run: ls -la
+    - uses: actions/checkout@v1
+
     - name: Upload to Roblox
       uses: tenx29/save-to-roblox@v1-prerelease
       with:
