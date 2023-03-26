@@ -5,10 +5,21 @@ jobs:
   Release-to-Roblox:
     runs-on: windows-latest
     steps:
-    - name: Rojo Build
-      uses: SkyLightRBX/RojoBuildAction@v0.1
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
       with:
-        output: 'build.rbxl'
+        toolchain: stable
+
+    - name: Install Rojo
+      uses: actions-rs/cargo@v1
+      with:
+        command: install
+        args: rojo --version ^6
+
+    - name: Build project
+      shell: bash
+      run: rojo build -o build.rbxl
+
     - name: Upload to Roblox
       uses: tenx29/save-to-roblox@v1-prerelease
       with:
