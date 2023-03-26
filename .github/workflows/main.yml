@@ -7,6 +7,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: List files
+      run: ls -l
+
     - name: Upload to Roblox
       uses: tenx29/save-to-roblox@v1-prerelease
       with:
