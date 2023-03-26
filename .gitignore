@@ -1,0 +1,10 @@
+# Project place file
+/rbx-action-test.rbxlx
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+# Build files
+/*.rbxlx
+/*.rbxl
